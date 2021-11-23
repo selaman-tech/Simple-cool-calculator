@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.js">
+    
+    </script> -->
+</head>
+<body>
+    <div class="container">
+
+        
+        <input type="text" disabled id="screen">
+        <div class="key">
+        <button class="btn-op btn" onclick="screen.value=null">CLR</button>
+        <button class="btn-op btn" onclick="num('/')">/</button>
+        <button class="btn-op btn btn" onclick="num('*')">x</button>
+        <button  class="btn-op btn" onclick=del() >del</button>
+        <button  class="btn-no btn" onclick="num('7')">7</button>
+        <button class="btn-no btn" onclick="num('8')">8</button>
+        <button class="btn-no btn" onclick="num('9')">9</button>
+        <button class="btn-op btn" onclick="num('-')">-</button>
+        <button class="btn-no btn" onclick="num('4')">4</button>
+        <button class="btn-no btn" onclick="num('5')">5</button>
+        <button class="btn-no btn" onclick="num('6')">6</button>
+        <button class="btn-op btn" onclick="num('+')">+</button>
+        <button class="btn-no btn" onclick="num('1')">1</button>
+        <button class="btn-no btn" onclick="num('2')">2</button>
+        <button class="btn-no btn" onclick="num('3')">3</button>
+        <button class="btn-op btn" onclick= solution() id="equal">=</button>
+        <button class="btn-no btn" onclick="num('0')" id="zero">0</button>
+        <button class="btn-no btn" onclick="num('.')">.</button>
+                     
+
+        <script>
+            let screen = document.getElementById('screen');
+
+            function num(number) {
+                screen.value += number; 
+
+              }
+
+              
+              function solution() {
+                  try{
+                      screen.value = eval(screen.value);
+                    }catch{
+                        alert("Invalid input value! "+ "correct your equation");
+                    }
+                }
+               
+                function del() { 
+                    screen.value = screen.value.slice(0,-1);
+                 }
+
+                 
+        </script>
+    </div>
+
+</body>
+</html>
